@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 3 – Creative Webpage</title>
+
+    <style>
+        body{
+            margin:0;
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #1d2671, #c33764);
+        }
+
+        .card{
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(12px);
+            padding: 40px;
+            width: 430px;
+            border-radius: 20px;
+            box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+            text-align: center;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover{
+            transform: translateY(-10px);
+        }
+
+        h1{
+            margin-top: 0;
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        h2{
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        p{
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        img{
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin-top: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+            transition: transform 0.4s ease;
+            border: 3px solid rgba(255,255,255,0.8);
+        }
+
+        img:hover{
+            transform: scale(1.1);
+        }
+
+        .btn{
+            display: inline-block;
+            margin: 10px 6px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: white;
+            color: #1d2671;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover{
+            background: #ffd86b;
+            color: #000;
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>Day 3 – Images & Links</h1>
+
+        <h2>My Image</h2>
+        <p>This image has a hover animation.</p>
+        <img src="hassan.jpg" alt="Mohammed Inamul Hassan">
+
+        <h2>Internal Link</h2>
+        <p>Go to my Day 2 webpage:</p>
+        <a href="day2.html" class="btn">Day 2 Page</a>
+
+        <h2>External Link</h2>
+        <p>Connect with me on LinkedIn:</p>
+        <a href="https://www.linkedin.com/in/mohammed-inamul-hassan-44775238a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+           target="_blank"
+           class="btn">
+           My LinkedIn
+        </a>
+
+    </div>
+
+</body>
+</html>
