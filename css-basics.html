@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day 8 – CSS Basics | Hassan</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #0a1f44, #102a5c, #163b7a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .card {
+            width: 480px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 35px;
+            margin: 20px;
+            border-radius: 18px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.45);
+            animation: fadeIn 1.2s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 32px;
+            font-weight: 800;
+            color: #7fb7ff;
+            text-shadow: 0 0 12px rgba(127, 183, 255, 0.7);
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            color: #cddfff;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #7fb7ff;
+            font-weight: 700;
+        }
+
+        .box {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 18px;
+            margin-top: 20px;
+            border-left: 4px solid #7fb7ff;
+            border-radius: 10px;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #cddfff;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>Day 8 – CSS Basics</h1>
+        <div class="subtitle">Created by Hassan</div>
+
+        <p>
+            This webpage demonstrates the use of basic
+            <span class="highlight">CSS styling properties</span>
+            such as colors, background, padding, margins, and font styles.
+        </p>
+
+        <div class="box">
+            <p>
+                • <span class="highlight">Colors</span> are used to style text and highlights.<br>
+                • <span class="highlight">Background</span> creates a royal blue theme.<br>
+                • <span class="highlight">Padding</span> adds space inside elements.<br>
+                • <span class="highlight">Margins</span> add space outside elements.<br>
+                • <span class="highlight">Font styles</span> improve readability and design.
+            </p>
+        </div>
+
+        <footer>
+            Internship Task – Day 8 <br>
+            CSS Styling Basics | Hassan
+        </footer>
+
+    </div>
+
+</body>
+</html>
