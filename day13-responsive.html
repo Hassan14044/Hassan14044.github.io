@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day 13 – Responsive Design</title>
+
+    <style>
+        /* ====== Base Style (Desktop) ====== */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px;
+            background: #1e293b;
+        }
+
+        h1 {
+            margin: 0;
+            color: #38bdf8;
+        }
+
+        .container {
+            display: flex;
+            padding: 30px;
+            gap: 20px;
+        }
+
+        .box {
+            flex: 1;
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-8px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #020617;
+            font-size: 14px;
+        }
+
+        /* ====== Tablet View ====== */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+
+            body {
+                background: #020617;
+            }
+        }
+
+        /* ====== Mobile View ====== */
+        @media (max-width: 600px) {
+            header {
+                padding: 18px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .box {
+                font-size: 14px;
+            }
+
+            body {
+                background: #020617;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Mohammed Inamul Hassan</h1>
+        <p>Day 13 – Responsive Webpage using Media Queries</p>
+    </header>
+
+    <div class="container">
+        <div class="box">
+            <h2>Desktop View</h2>
+            <p>This layout is displayed on large screens like laptops.</p>
+        </div>
+
+        <div class="box">
+            <h2>Tablet View</h2>
+            <p>Layout changes when screen size is medium.</p>
+        </div>
+
+        <div class="box">
+            <h2>Mobile View</h2>
+            <p>Stacked layout for small screens.</p>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 | Hassan | Web Development Internship
+    </footer>
+
+</body>
+</html>
