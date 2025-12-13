@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mohammed Inamul Hassan | Portfolio</title>
+
+<style>
+:root{
+  --blue:#7fb7ff;
+  --dark:#0a1f44;
+  --card:rgba(255,255,255,0.08);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:"Segoe UI",Arial,sans-serif;
+  background:linear-gradient(135deg,#0a1f44,#102a5c,#163b7a);
+  color:white;
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(10px);
+  padding:15px 50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:100;
+}
+
+nav .logo{
+  font-size:24px;
+  font-weight:900;
+  color:var(--blue);
+  text-shadow:0 0 10px rgba(127,183,255,.8);
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:22px;
+  font-weight:600;
+  position:relative;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0;
+  height:2px;
+  background:var(--blue);
+  transition:.3s;
+}
+nav a:hover::after{width:100%}
+
+/* SECTIONS */
+section{
+  padding:120px 60px;
+}
+
+.card{
+  max-width:1100px;
+  margin:auto;
+  background:var(--card);
+  padding:50px;
+  border-radius:20px;
+  box-shadow:0 30px 50px rgba(0,0,0,.4);
+  animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* HOME */
+#home h1{
+  font-size:42px;
+  color:var(--blue);
+}
+#home span{color:#ffd166}
+#home p{
+  font-size:18px;
+  max-width:650px;
+  line-height:1.7;
+}
+
+/* HEADINGS */
+h2{
+  color:var(--blue);
+  font-size:32px;
+  margin-bottom:20px;
+}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.service{
+  background:rgba(0,0,0,0.35);
+  padding:25px;
+  border-radius:16px;
+  transition:.3s;
+}
+.service:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 30px rgba(0,0,0,.5);
+}
+.service h3{color:#ffd166}
+
+/* TASKS */
+.tasks{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+.task{
+  background:rgba(0,0,0,0.35);
+  padding:18px;
+  border-radius:14px;
+}
+.task a{
+  color:var(--blue);
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* CONTACT */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.contact-box{
+  background:rgba(0,0,0,0.35);
+  padding:20px;
+  border-radius:14px;
+}
+.contact-box a{
+  color:var(--blue);
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:rgba(0,0,0,.4);
+  font-size:14px;
+  color:#cddfff;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:15px 25px}
+  section{padding:100px 25px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">Hassan</div>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#tasks">Tasks</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+  <div class="card">
+    <h1>Hello, I’m <span>Mohammed Inamul Hassan</span></h1>
+    <p>
+      I am a <strong>Software Developer</strong> and <strong>Digital Marketer</strong>  
+      passionate about building modern websites, applications, and helping
+      businesses grow digitally.
+    </p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="card">
+    <h2>About Me</h2>
+    <p>
+      I am Mohammed Inamul Hassan, a BCA student and aspiring software developer
+      with experience in web development and digital marketing.
+    </p>
+    <p>
+      <strong>Location:</strong> Mysore, Karnataka, India<br>
+      <strong>Email:</strong> Mohd.inamul.hassan@outlook.com<br>
+      <strong>Phone:</strong> +91 8431071616
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="card">
+    <h2>My Services</h2>
+    <div class="services">
+      <div class="service"><h3>Web Development</h3><p>Modern and responsive websites.</p></div>
+      <div class="service"><h3>Software Development</h3><p>Scalable application solutions.</p></div>
+      <div class="service"><h3>Digital Marketing</h3><p>SEO & social media growth.</p></div>
+      <div class="service"><h3>UI / UX Design</h3><p>Clean & user-friendly designs.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TASKS -->
+<section id="tasks">
+  <div class="card">
+    <h2>Completed Internship Tasks</h2>
+    <div class="tasks">
+      <div class="task">Day 1 – Webpage Intro</div>
+      <div class="task"><a href="day2.html">Day 2 – Headings & Paragraphs</a></div>
+      <div class="task"><a href="day3.html">Day 3 – Images & Links</a></div>
+      <div class="task"><a href="day4.html">Day 4 – Lists</a></div>
+      <div class="task"><a href="day5.html">Day 5 – Tables</a></div>
+      <div class="task"><a href="day6.html">Day 6 – Form</a></div>
+      <div class="task"><a href="day7.html">Day 7 – div, span, iframe</a></div>
+      <div class="task"><a href="css-basics.html">Day 8 – CSS Basics</a></div>
+      <div class="task"><a href="day9-form.html">Day 9 – Styled Form</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="card">
+    <h2>Connect With Me</h2>
+    <div class="contact-grid">
+      <div class="contact-box">
+        <strong>LinkedIn</strong><br>
+        <a href="https://www.linkedin.com/in/mohammed-inamul-hassan-44775238a" target="_blank">View Profile</a>
+      </div>
+
+      <div class="contact-box">
+        <strong>Instagram</strong><br>
+        <a href="https://www.instagram.com/inamul_hasan7" target="_blank">Follow Me</a>
+      </div>
+
+      <div class="contact-box">
+        <strong>GitHub</strong><br>
+        <a href="https://github.com/Hassan14044" target="_blank">My GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+© 2025 | Mohammed Inamul Hassan | Full Portfolio Website
+</footer>
+
+</body>
+</html>
