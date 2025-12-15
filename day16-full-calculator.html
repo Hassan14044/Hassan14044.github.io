@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 16 – Full Calculator | Hassan</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#020617,#0f172a);
+}
+
+.calculator{
+    width:340px;
+    background:#020617;
+    padding:20px;
+    border-radius:25px;
+    box-shadow:0 40px 80px rgba(0,0,0,0.8);
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* DISPLAY */
+.display{
+    height:80px;
+    background:#0f172a;
+    border-radius:15px;
+    padding:15px;
+    color:#38bdf8;
+    font-size:32px;
+    text-align:right;
+    overflow:hidden;
+    box-shadow:inset 0 0 15px rgba(56,189,248,0.4);
+}
+
+/* BUTTON GRID */
+.buttons{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+button{
+    height:60px;
+    border:none;
+    border-radius:15px;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+button:active{
+    transform:scale(0.92);
+}
+
+/* COLORS */
+.operator{background:#334155; color:#38bdf8;}
+.equal{background:#38bdf8; color:#020617; grid-column: span 2;}
+.clear{background:#ef4444; color:white;}
+.delete{background:#f97316; color:white;}
+.number{background:#1e293b; color:white;}
+.percent{background:#22c55e; color:#020617;}
+</style>
+</head>
+
+<body>
+
+<div class="calculator">
+
+    <div class="display" id="display">0</div>
+
+    <div class="buttons">
+        <button class="clear" onclick="clearAll()">AC</button>
+        <button class="delete" onclick="deleteLast()">⌫</button>
+        <button class="percent" onclick="append('%')">%</button>
+        <button class="operator" onclick="append('/')">÷</button>
+
+        <button class="number" onclick="append('7')">7</button>
+        <button class="number" onclick="append('8')">8</button>
+        <button class="number" onclick="append('9')">9</button>
+        <button class="operator" onclick="append('*')">×</button>
+
+        <button class="number" onclick="append('4')">4</button>
+        <button class="number" onclick="append('5')">5</button>
+        <button class="number" onclick="append('6')">6</button>
+        <button class="operator" onclick="append('-')">−</button>
+
+        <button class="number" onclick="append('1')">1</button>
+        <button class="number" onclick="append('2')">2</button>
+        <button class="number" onclick="append('3')">3</button>
+        <button class="operator" onclick="append('+')">+</button>
+
+        <button class="number" onclick="append('0')">0</button>
+        <button class="number" onclick="append('.')">.</button>
+        <button class="equal" onclick="calculate()">=</button>
+    </div>
+
+</div>
+
+<script>
+let display = document.getElementById("display");
+
+function append(value){
+    if(display.innerText === "0"){
+        display.innerText = value;
+    }else{
+        display.innerText += value;
+    }
+}
+
+function clearAll(){
+    display.innerText = "0";
+}
+
+function deleteLast(){
+    display.innerText = display.innerText.slice(0, -1);
+    if(display.innerText === ""){
+        display.innerText = "0";
+    }
+}
+
+function calculate(){
+    try{
+        let expression = display.innerText.replace('%','/100');
+        display.innerText = eval(expression);
+    }catch{
+        display.innerText = "Error";
+    }
+}
+</script>
+
+</body>
+</html>
