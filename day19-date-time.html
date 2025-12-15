@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 19 – Date & Time | Hassan</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#020617,#0f172a);
+}
+
+.clock-card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(16px);
+    padding:40px 50px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 30px 60px rgba(0,0,0,0.6);
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:scale(0.9);}
+    to{opacity:1; transform:scale(1);}
+}
+
+h1{
+    color:#38bdf8;
+    margin-bottom:20px;
+}
+
+.date{
+    font-size:18px;
+    color:#cbd5f5;
+    margin-bottom:10px;
+}
+
+.time{
+    font-size:42px;
+    font-weight:800;
+    color:#4ade80;
+    letter-spacing:2px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="clock-card">
+    <h1>Current Date & Time</h1>
+    <div class="date" id="date"></div>
+    <div class="time" id="time"></div>
+</div>
+
+<script>
+function updateDateTime(){
+    const now = new Date();
+
+    const date = now.toLocaleDateString(undefined,{
+        weekday:"long",
+        year:"numeric",
+        month:"long",
+        day:"numeric"
+    });
+
+    const time = now.toLocaleTimeString();
+
+    document.getElementById("date").innerText = date;
+    document.getElementById("time").innerText = time;
+}
+
+updateDateTime();
+setInterval(updateDateTime,1000);
+</script>
+
+</body>
+</html>
