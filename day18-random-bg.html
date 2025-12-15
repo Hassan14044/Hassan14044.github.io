@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 18 – Random Background Color | Hassan</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#020617;
+    transition: background 0.8s ease;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 30px 60px rgba(0,0,0,0.6);
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+p{
+    color:#e5e7eb;
+    margin-bottom:25px;
+}
+
+#colorCode{
+    font-size:18px;
+    font-weight:bold;
+    color:#4ade80;
+    margin-bottom:20px;
+}
+
+button{
+    padding:14px 28px;
+    border:none;
+    border-radius:30px;
+    background:#38bdf8;
+    color:#020617;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px rgba(56,189,248,0.9);
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Random Background Color</h1>
+    <p>Click the button to change background color randomly</p>
+
+    <div id="colorCode">#020617</div>
+
+    <button onclick="changeColor()">Change Color</button>
+</div>
+
+<script>
+function changeColor(){
+    let letters = "0123456789ABCDEF";
+    let color = "#";
+
+    for(let i=0; i<6; i++){
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+
+    document.body.style.background = color;
+    document.getElementById("colorCode").innerText = color;
+}
+</script>
+
+</body>
+</html>
